@@ -1,0 +1,23 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<ApplicationUser> signInManager;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@if (signInManager.IsSignedIn(User))
+{
+
+    <p><a asp-controller="Animal" asp-action="Index">See Your Animals</a></p>
+    <p><a asp-controller="Animal" asp-action="Add">Add Animal</a></p>
+    <p><a asp-controller="Animal" asp-action="Remove">Remove Animal</a></p>
+    <p><a asp-controller="AnimalType" asp-action="Add">Add Animal Breed or Species</a></p>
+
+
+}
+else
+{
+    <p><a asp-controller="Account" asp-action="Login">Login</a></p>
+    <p><a asp-controller="Account" asp-action="Register">Register</a></p>
+
+
+}

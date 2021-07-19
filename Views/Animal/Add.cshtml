@@ -1,0 +1,36 @@
+﻿@model TPHS.ViewModels.AddAnimalViewModel 
+<h1>Add Animals</h1>
+
+<form asp-controller="Animal" asp-action="Add" method="post">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input class="form-control" asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="AnimalTypeID"></label>
+        <select asp-for="AnimalTypeID" asp-items="Model.AnimalTypes"></select>
+    </div>
+    <div>
+    <input type="file" name="pic" accept="image/*" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Allergy"></label>
+        <input class="form-control" asp-for="Allergy" />
+        <span asp-validation-for="Allergy"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Vet"></label>
+        <input class="form-control" asp-for="Vet" />
+        <span asp-validation-for="Vet"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="SpecialVet"></label>
+        <input class="form-control" asp-for="SpecialVet" />
+        <span asp-validation-for="SpecialVet"></span>
+    </div>
+
+
+
+    <input type="submit" value="Add Animal" />
+</form>
